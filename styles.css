@@ -5,13 +5,14 @@
 }
 
 header {
+    position: fixed;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* top: 0px;
-    left: 0px; */
     width: 100vw;
     height: 50px;
+    background-color: #fefefe;
 }
 
 #logo-group {
@@ -97,6 +98,7 @@ nav a:hover {
 #hero-section {
     display: flex;
     flex-direction: column;
+    padding-top: 50px;
     width: 100vw;
     height: 1387px;
     align-items: center;
@@ -119,7 +121,7 @@ nav a:hover {
     font-family: poppins;
     font-size: 35pt;
     color: #010740;
-    margin: 20px 0px;
+    margin: 40px 0 20px 0;
     /* font-weight: 400; */
 }
 
@@ -149,4 +151,106 @@ nav a:hover {
     color: #000000;
     font-weight: 200;
     margin: 0;
+}
+
+#hero-section > div:nth-of-type(4) {
+    margin-bottom: 80px;
+}
+
+#solution-narrative {
+    display: flex;
+    width: 80vw;
+    height: 927px;
+    border: none;
+    background-color: #fefefe;
+    border-radius: 10px;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#problem-narrative {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 250px;
+    border: none;
+    background-color: #026F91;
+    border-radius: 10px;
+}
+
+#problem-narrative > div:nth-of-type(1) {
+    padding: 30px;
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+    position: relative;
+}
+
+#problem-narrative > div:nth-of-type(1) h2 {
+    color: #fefefe;
+    font-family: 'poppins', sans-serif;
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+
+#problem-narrative > div:nth-of-type(1) p {
+    color: #fefefe;
+    font-family: 'metropolis', sans-serif;
+    font-size: 11pt;
+}
+
+#problem-visual {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    min-width: 400px;
+    position: relative;
+}
+
+#problem-visual img {
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+}
+
+#problem-visual img.fg {
+    width: 400px;
+    height: auto;
+    margin: 0 0;
+    align-self: flex-end;
+}
+
+div.bg {
+    background-image: url(./assets/troubled-subject-bg.png);
+    border: none;
+    height: 100%;
+    width: 370px;
+    background-size: cover;
+    background-position: 0%;
+    background-repeat: no-repeat;
+}
+
+#problem-narrative > div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: stretch;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    padding-right: 40px;
+}
+
+#problem-narrative > div:nth-of-type(3) div {
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #fefefe;
+    font-family: 'metropolis', sans-serif;
+    font-size: 11pt;
+    box-sizing: border-box;
 }
