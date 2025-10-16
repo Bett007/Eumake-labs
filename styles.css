@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* top: 0px;
+    left: 0px; */
+    width: 100vw;
+    height: 50px;
+}
+
+#logo-group {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#logo img {
+    width: 80px;
+    padding: 0 10px 0 10px;
+}
+
+#business-name a {
+    text-decoration: none;
+    font-family: metropolis;
+    font-weight: 500;
+    color: #010740;
+}
+
+header > div:nth-of-type(2) {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    width: 480px;
+    padding: 0 10px 0 10px;
+}
+
+nav ul {
+    list-style: none;          /* removing bullets */
+    margin: 0;
+    display: flex;             /* making nav items horizontal */
+    justify-content: center;   /* centering them horizontally */
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: metropolis;
+    font-weight: 500;
+    font-size: 12pt;
+}
+
+nav a:hover {
+    color: #2DB9FE;
+}
+
+.get-in-touch-btn {
+    margin: 0 15px;
+    width: 140px;
+    height: 40px;
+    background-color: #2DB9FE;
+    border: none ;
+    border-radius: 8px;
+    color: #fefefe;
+    font-family: metropolis ;
+    font-weight: 500;
+    font-size: 12pt;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.login-btn {
+    margin: 0 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #fefefe;
+    border: solid #2DB9FE;
+    border-radius: 8px;
+    color: #2DB9FE;
+    font-family: metropolis ;
+    font-weight: 600;
+    font-size: 12pt;
+    text-align: center;
+}
+
+#hero-section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 1387px;
+    align-items: center;
+    background-image: url(./assets/hero-section-background-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-image {
+    width: 100%;
+    height: auto;
+}
+
+/* #hero-section > div:nth-of-type(1) {
+    margin: 10px 0 0 0;
+}*/
+#hero-section > div:nth-of-type(2) p {
+    text-align: center;
+    font-family: poppins;
+    font-size: 35pt;
+    color: #010740;
+    margin: 20px 0px;
+    /* font-weight: 400; */
+}
+
+#hero-section > div:nth-of-type(2) p span:nth-of-type(2) {
+    margin: 0 80px;
+}
+
+#hero-section > div:nth-of-type(3) {
+    margin: 0 0 20px 0
+}
+
+#hero-section > div:nth-of-type(3) p:nth-of-type(1) {
+    max-width: 700px;
+    text-align: center;
+    font-family: metropolis;
+    font-size: 12pt;
+    color: #010740;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+#hero-section > div:nth-of-type(3) p:nth-of-type(2) {
+    max-width: 700px;
+    text-align: center;
+    font-family: metropolis;
+    font-size: 12pt;
+    color: #000000;
+    font-weight: 200;
+    margin: 0;
+}
