@@ -402,3 +402,46 @@ div.bg {
     padding: 0 10px;
     text-align: center;
 }
+
+#ask-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(45, 185, 254, 0.4);
+}
+
+#ask-section > div {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.FAQ-item svg {
+    width: 15px;
+    height: auto;
+    transition: transform 0.3s ease, color 0.25s ease;
+    color: #b2b2b2;
+}
+
+.FAQ-item.active svg {
+    transform: rotate(180deg);
+    color:#01074099;
+}
+
+.FAQ-item:hover svg {
+  color: #01074099;
+}
+
+.FAQ-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    border: none;
+    background-color: rgb(109, 109, 109, 0.2);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
