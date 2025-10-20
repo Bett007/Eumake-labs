@@ -13,8 +13,7 @@
 
   getInTouchButtons.forEach(button => {
     button.addEventListener('click', () => {
-
-        //Smooth scroll to the get in touch section
+        //Smooth scroll to the get-in-touch section
         const targetSection = document.querySelector('#get-in-touch-section');
         targetSection.scrollIntoView({ behavior: 'smooth' });
     })

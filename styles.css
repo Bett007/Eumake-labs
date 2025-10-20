@@ -616,3 +616,213 @@ margin: 0;
   align-items: center;
   gap: 6px;
 }
+
+/* footer-section */
+/* Footer main container */
+#footer-section {
+  background: #f6f6f6;
+  color: #222;
+  font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  font-size: 15px;
+  line-height: 1.45;
+  padding: 48px 0 0;
+}
+
+/* inner wrapper to control width */
+#footer-div {
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+/* layout: contact-details area spans most columns */
+#contact-details {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 300px 360px 300px; 
+  gap: 40px;
+  align-items: start;
+  padding: 0 20px 0;
+}
+
+/* Make layout collapse nicely on small screens */
+@media (max-width: 980px) {
+  #contact-details {
+    grid-template-columns: 1fr;
+  }
+
+  #contact-details > div {
+    order: 0;
+  }
+}
+
+#contact-details h2 {
+  font-size: 18px;
+  color: #1f1f1f;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+#contact-us {
+  padding-right: 8px;
+}
+
+/* each contact row: icon + text */
+#contact-us > div {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+/* icon wrapper */
+#contact-us icon,
+#follow-us icon {
+  display: inline-flex;
+  width: 20px;
+  height: auto;
+  flex: 0 0 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact-us icon svg,
+#follow-us icon svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#copyright-footer {
+  width: 100%;
+  margin: 0 0;
+
+}
+
+#follow-us p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* multi-line hours paragraph - keep line length comfortable */
+#hours p {
+  max-width: 420px;
+  white-space: normal;
+}
+
+#eumake p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #5f5f5f;
+  font-size: 14px;
+}
+
+#eumake p span {
+  display: inline-block;
+}
+
+/* MAP column - make iframe responsive */
+#locate-us iframe {
+  width: 100%;
+  height: 200px; /* matches small map in sample */
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+/* FOLLOW US column */
+#follow-us {
+  padding-left: 8px;
+}
+
+#follow-us > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#follow-us p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Partner With Us block inside follow-us */
+#partner-with-us {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  align-items: left;
+  justify-content: flex-start;
+}
+
+#partner-with-us h2 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* small accent link text */
+#partner-with-us p span {
+  color: #0b66ff;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+/* Footer bottom copyright bar */
+#footer-div > div:last-child {
+  grid-column: 1 / -1;
+  margin-top: 28px;
+  background: #15294a; /* deep navy */
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* small screens: make map taller for usability */
+@media (max-width: 600px) {
+  #locate-us iframe {
+    height: 260px;
+  }
+
+  #footer-section {
+    padding: 30px 16px 0;
+  }
+}
+
+/* optional tiny visual polish */
+#footer-section a {
+  color: inherit;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: #f8f8f8;
+  padding: 20px 0;
+}
+
+.footer-sections {
+  padding: 0 30px;
+  border-left: 1px solid #ccc; /* vertical line */
+  width: 300px;
+}
+
+/* Removing the line before the first item */
+.footer-sections:first-child {
+  border-left: none;
+}
