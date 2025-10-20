@@ -254,3 +254,26 @@ div.bg {
     font-size: 11pt;
     box-sizing: border-box;
 }
+
+.solution-image {
+    width: 550;
+    height: 456;
+}
+
+.masked-cards {
+    width: 430px;
+    height: 400px;
+    background: src="./assets/our-solution-image.jpg" center/cover;
+
+    /* masking */
+    mask-image: src="./assets/test-category-image-mask.png"; /* white area visible, black transparent */
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    /* for safari webkit */
+    -webkit-mask-image: src="./assets/test-category-image-mask.png";
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
