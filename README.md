@@ -50,7 +50,7 @@ These are features and enhancements planned for future iterations:
 - Adjust typography, layout grids, and button scaling for smaller screens.
 
 ### ❓ FAQ Answers
-- Add full FAQ answer toggle functionality (currently disabled).
+- Add full FAQ answer toggle functionality (currently incomplete).
 - Include real, editable answers fetched dynamically or written into HTML.
 
 ### 🎨 UI Polish
