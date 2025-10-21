@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --header-height: 70px;
+}
+
 .section-div {
     width: 100%;
 }
