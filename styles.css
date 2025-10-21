@@ -8,6 +8,8 @@
   --header-height: 50px;
 }
 
+section, .anchor-target { scroll-margin-top: calc(var(--header-height) + 8px); }
+
 html {
   scroll-behavior: smooth;
 }
