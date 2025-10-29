@@ -119,3 +119,148 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   })();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const browseButtons = document.querySelectorAll(".browse-btn");
+  const servicesSection = document.querySelector("#services-section");
+
+  if (!browseButtons.length || !servicesSection) return;
+
+  browseButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // prevent duplicate injection
+      if (servicesSection.querySelector(".find-test-sub-section")) return;
+
+      // create the outer div
+      const findTestSubSection = document.createElement("div");
+      findTestSubSection.className = "find-test-sub-section";
+
+      // ===== divider =====
+      const divider = document.createElement("hr");
+      divider.className = "horizontal-divider";
+      findTestSubSection.appendChild(divider);
+
+      // ===== banner =====
+      const banner = document.createElement("div");
+      banner.className = "find-test-banner";
+
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "find-test-title";
+      const h2 = document.createElement("h2");
+      h2.textContent = "Find Test";
+      titleDiv.appendChild(h2);
+
+      const link = document.createElement("a");
+      link.href = "#";
+      link.className = "view-link";
+      link.textContent = "View full test catalogue";
+
+      banner.appendChild(titleDiv);
+      banner.appendChild(link);
+      findTestSubSection.appendChild(banner);
+
+      // ===== search bar =====
+      const findTest = document.createElement("div");
+      findTest.className = "find-test";
+
+      const searchBar = document.createElement("div");
+      searchBar.className = "search-bar";
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Search";
+      input.className = "search-input";
+
+      const select = document.createElement("select");
+      select.className = "search-filter";
+
+      // Create a disabled placeholder option
+      const placeholderOption = document.createElement("option");
+      placeholderOption.textContent = "Categories";
+      placeholderOption.disabled = true;
+      placeholderOption.selected = true;
+      placeholderOption.hidden = true; // hides it from dropdown list after selection
+      select.appendChild(placeholderOption);
+
+      // Add other options
+      ["All", "Blood Tests", "Urine Tests", "Imaging"].forEach((optText) => {
+        const option = document.createElement("option");
+        option.textContent = optText;
+        select.appendChild(option);
+      });
+
+      searchBar.appendChild(input);
+      searchBar.appendChild(select);
+      findTest.appendChild(searchBar);
+      findTestSubSection.appendChild(findTest);
+
+      // ===== test card =====
+      const testContainer = document.createElement("div");
+      testContainer.className = "test-container";
+
+      const img = document.createElement("img");
+      img.src = "./assets/routine-tests.png";
+      img.alt = "routine-tests image";
+      img.className = "test-image";
+      testContainer.appendChild(img);
+
+      const testContent = document.createElement("div");
+      testContent.className = "test-content";
+
+      const testActions = document.createElement("div");
+      testActions.className = "test-actions";
+
+      const addBtn = document.createElement("button");
+      addBtn.className = "add-btn";
+      addBtn.textContent = "Add";
+
+      const duration = document.createElement("div");
+      duration.className = "duration";
+      const pDuration = document.createElement("p");
+      pDuration.textContent = "2–3 Hrs";
+      duration.appendChild(pDuration);
+
+      testActions.appendChild(addBtn);
+      testActions.appendChild(duration);
+
+      const testTitle = document.createElement("h2");
+      testTitle.className = "test-title";
+      testTitle.textContent = "COMPLETE BLOOD COUNT (CBC)";
+
+      const testDescription = document.createElement("div");
+      testDescription.className = "test-description";
+      const desc1 = document.createElement("p");
+      desc1.textContent =
+        "The Complete Blood Count (CBC) test gives a detailed snapshot of your overall blood health.";
+      const desc2 = document.createElement("p");
+      desc2.textContent =
+        "It helps detect conditions like anemia, infections, and other blood-related disorders early.";
+      testDescription.appendChild(desc1);
+      testDescription.appendChild(desc2);
+
+      testContent.appendChild(testActions);
+      testContent.appendChild(testTitle);
+      testContent.appendChild(testDescription);
+
+      testContainer.appendChild(testContent);
+      findTestSubSection.appendChild(testContainer);
+
+      // ===== book button =====
+      const bookDiv = document.createElement("div");
+      bookDiv.className = "book-tests-btn-div";
+
+      const bookBtn = document.createElement("button");
+      bookBtn.className = "book-tests-btn";
+      bookBtn.textContent = "Book Added Test(s)";
+      bookDiv.appendChild(bookBtn);
+
+      findTestSubSection.appendChild(bookDiv);
+
+      // ===== append to services section =====
+      servicesSection.appendChild(findTestSubSection);
+
+      // optional smooth scroll
+      findTestSubSection.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+});

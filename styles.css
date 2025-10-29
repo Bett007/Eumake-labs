@@ -481,6 +481,13 @@ div.bg {
   transition: border-color 0.2s;
 }
 
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.4); /* same as select placeholder */
+  font-family: "metropolis", sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+}
+
 .search-input:focus {
   border-color: #026f91;
 }
@@ -489,10 +496,35 @@ div.bg {
   padding: 8px 14px;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  background-color: #fff;
-  color: #333;
   cursor: pointer;
   width: 20%;
+  font-family: "metropolis", sans-serif;
+  transition: border-color 0.2s;
+
+  appearance: none; /* removes native arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='14' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M2 4l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center; /* space from edge */
+  background-size: 14px;
+  padding-right: 38px; /* adjust for arrow space */
+}
+
+/* Matching the look of a placeholder */
+.search-filter option[disabled][selected] {
+  color: rgba(0, 0, 0, 0.4); /* light gray like input placeholder */
+}
+
+/* Changing color back to normal once user selects something */
+.search-filter:not(:invalid) {
+  color: #333;
+}
+
+/* Focus behavior (to match input style) */
+.search-filter:focus {
+  border-color: #026f91;
+  outline: none;
 }
 
 .search-filter:focus {
@@ -852,23 +884,20 @@ div.bg {
 
 /* inner wrapper to control width */
 #footer-div {
-  max-width: 100vw;
+  max-width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 36px;
+  gap: 10px;
   align-items: start;
 }
 
 /* layout: contact-details area spans most columns */
 #contact-details {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 300px 360px 300px;
-  gap: 40px;
-  align-items: start;
-  padding: 0 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Make layout collapse nicely on small screens */
@@ -887,10 +916,6 @@ div.bg {
   color: #1f1f1f;
   margin: 0 0 12px;
   font-weight: 600;
-}
-
-#contact-us {
-  padding-right: 8px;
 }
 
 /* each contact row: icon + text */
@@ -930,7 +955,6 @@ div.bg {
   font-size: 14px;
 }
 
-/* multi-line hours paragraph - keep line length comfortable */
 #hours p {
   max-width: 420px;
   white-space: normal;
@@ -949,6 +973,10 @@ div.bg {
   display: inline-block;
 }
 
+#locate-us {
+  width: 100vw;
+}
+
 /* MAP column - make iframe responsive */
 #locate-us iframe {
   width: 100%;
@@ -959,9 +987,6 @@ div.bg {
 }
 
 /* FOLLOW US column */
-#follow-us {
-  padding-left: 8px;
-}
 
 #follow-us > div {
   display: flex;
@@ -981,9 +1006,9 @@ div.bg {
   margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   align-items: left;
   justify-content: flex-start;
+  width: 100%;
 }
 
 #partner-with-us h2 {
@@ -998,6 +1023,10 @@ div.bg {
   text-decoration: underline;
   cursor: pointer;
   margin-right: 6px;
+}
+
+#partner-with-us p {
+ width: 100%;
 }
 
 /* Footer bottom copyright bar */
@@ -1031,7 +1060,7 @@ div.bg {
 
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   background: #f8f8f8;
   padding: 20px 0;
@@ -1040,7 +1069,7 @@ div.bg {
 .footer-sections {
   padding: 0 30px;
   border-left: 1px solid #ccc; /* vertical line */
-  width: 300px;
+  width: 100%;
 }
 
 /* Removing the line before the first item */
