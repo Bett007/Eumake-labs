@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       select.appendChild(placeholderOption);
 
       // Add other options
-      ["All", "Blood Tests", "Urine Tests", "Imaging"].forEach((optText) => {
+      ["All", "Routine Tests", "Home Sample Collection Tests", "Specialized Tests", "Offers & packages"].forEach((optText) => {
         const option = document.createElement("option");
         option.textContent = optText;
         select.appendChild(option);
